@@ -14,8 +14,6 @@ private:
 
     LogicState::eLogicState enableInput;
 
-
-
 public:
 
     TriStateBufferGate();
