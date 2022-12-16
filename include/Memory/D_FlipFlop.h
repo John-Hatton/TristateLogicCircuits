@@ -17,6 +17,8 @@ private:
 
     LogicState::eLogicState outputQ;
 
+    LogicState::eLogicState outputQBar;
+
     NotGate* notGate;
 
     AndGate* andGateOne;
@@ -42,6 +44,10 @@ public:
     LogicState::eLogicState getOutputQ() const;
 
     void setOutputQ(LogicState::eLogicState outputQ);
+
+    LogicState::eLogicState getOutputQBar() const;
+
+    void setOutputQBar(LogicState::eLogicState ouputQBar);
 
     NotGate *getNotGate() const;
 

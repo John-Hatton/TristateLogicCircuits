@@ -66,7 +66,7 @@ TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_ON__enableInput_ON___OutputQ_ON__Te
     EXPECT_EQ(actual, expected);
 }
 
-TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_DISABLED__enableInput_ON___OutputQ_DISABLEDx__Test)
+TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_OFF__enableInput_ON_then_DISABLED___OutputQ_DISABLED__Test)
 {
     // 1. Setup
 
@@ -74,14 +74,17 @@ TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_DISABLED__enableInput_ON___OutputQ_
 
     // 2. Code
 
-    myD_FlipFlop->setDataInput(LogicState::DISABLED);
+    myD_FlipFlop->setDataInput(LogicState::OFF);
     myD_FlipFlop->setEnableInput(LogicState::ON);
 
 
-    LogicState::eLogicState expected = LogicState::DISABLED;
-    auto actual = myD_FlipFlop->answer();
+    LogicState::eLogicState expected = LogicState::OFF;
+    auto actual = myD_FlipFlop->answer(); // FCN Call updates internal variables
+
+    myD_FlipFlop->setEnableInput(LogicState::DISABLED); // Change state of Enable to see if that has any impact
+    actual = myD_FlipFlop->answer(); // Call FCN again, to mimic real inputs of D_FlipFlop (mit VierBitRAM z.B.)
 
     // 3. Test
 
-    EXPECT_EQ(actual, expected);
+    EXPECT_EQ(actual, expected); // IT WORKS!!!
 }
