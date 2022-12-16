@@ -4,6 +4,10 @@ add_library(TristateLogicCircuits
         LogicGates/TestGate.cpp
         LogicGates/AndGate.cpp
 
-        LogicGates/OrGate.cpp)
+        LogicGates/OrGate.cpp
+        LogicGates/XorGate.cpp
+        Adders/FullAdder.cpp
+        LogicGates/NorGate.cpp
+        )
 
 

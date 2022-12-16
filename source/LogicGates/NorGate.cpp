@@ -2,35 +2,37 @@
 // Created by snake on 12/15/2022.
 //
 
-#include "LogicGates/AndGate.h"
+#include "LogicGates/NorGate.h"
 
-AndGate::AndGate() = default;
+NorGate::NorGate() {
 
-LogicState::eLogicState AndGate::getInputX() const {
+}
+
+LogicState::eLogicState NorGate::getInputX() const {
     return inputX;
 }
 
-void AndGate::setInputX(LogicState::eLogicState inputX) {
-    AndGate::inputX = inputX;
+void NorGate::setInputX(LogicState::eLogicState inputX) {
+    NorGate::inputX = inputX;
 }
 
-LogicState::eLogicState AndGate::getInputY() const {
+LogicState::eLogicState NorGate::getInputY() const {
     return inputY;
 }
 
-void AndGate::setInputY(LogicState::eLogicState inputY) {
-    AndGate::inputY = inputY;
+void NorGate::setInputY(LogicState::eLogicState inputY) {
+    NorGate::inputY = inputY;
 }
 
-LogicState::eLogicState AndGate::getOutput() const {
+LogicState::eLogicState NorGate::getOutput() const {
     return output;
 }
 
-void AndGate::setOutput(LogicState::eLogicState output) {
-    AndGate::output = output;
+void NorGate::setOutput(LogicState::eLogicState output) {
+    NorGate::output = output;
 }
 
-LogicState::eLogicState AndGate::answer()
+LogicState::eLogicState NorGate::answer()
 {
     if (inputX == LogicState::DISABLED || inputY == LogicState::DISABLED)
     {
@@ -43,25 +45,25 @@ LogicState::eLogicState AndGate::answer()
             // Case 2 D,F
         else if (inputX == LogicState::DISABLED && inputY == LogicState::OFF)
         {
-            output = LogicState::OFF;
+            output = LogicState::DISABLED;
             return output;
         }
             // Case 3 F,D
         else if (inputX == LogicState::OFF && inputY == LogicState::DISABLED)
         {
-            output = LogicState::OFF;
+            output = LogicState::DISABLED;
             return output;
         }
             // Case 4 D,T
         else if (inputX == LogicState::DISABLED && inputY == LogicState::ON)
         {
-            output = LogicState::DISABLED;
+            output = LogicState::OFF;
             return output;
         }
             // Case 5 T,D
         else if (inputX == LogicState::ON && inputY == LogicState::DISABLED)
         {
-            output = LogicState::DISABLED;
+            output = LogicState::OFF;
             return output;
         }
     }
@@ -71,7 +73,7 @@ LogicState::eLogicState AndGate::answer()
         // Case 6 F,F
         if (inputX == LogicState::OFF && inputY == LogicState::OFF)
         {
-            output = LogicState::OFF;
+            output = LogicState::ON;
             return output;
         }
             // Case 7 F,T
@@ -89,10 +91,11 @@ LogicState::eLogicState AndGate::answer()
             // Case 9 T,T
         else if (inputX == LogicState::ON && inputY == LogicState::ON)
         {
-            output = LogicState::ON;
+            output = LogicState::OFF;
             return output;
         }
     }
     std::cout<<"Something has gone very wrong with XorGate" << std::endl;
     return LogicState::DISABLED;
 }
+

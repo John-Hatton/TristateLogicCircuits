@@ -2,7 +2,6 @@
 // Created by snake on 12/15/2022.
 //
 
-#include <iostream>
 #include "LogicGates/OrGate.h"
 
 OrGate::OrGate() {
@@ -39,7 +38,8 @@ LogicState::eLogicState OrGate::answer() {
 
     if (inputX == LogicState::DISABLED && inputY == LogicState::DISABLED)
     {
-        return LogicState::DISABLED;
+        output = LogicState::DISABLED;
+        return output;
     }
 
     // If one or the other inputs are disabled
@@ -48,19 +48,23 @@ LogicState::eLogicState OrGate::answer() {
     {
         if (inputX == LogicState::ON && inputY == LogicState::DISABLED)
         {
-            return LogicState::ON;
+            output = LogicState::ON;
+            return output;
         }
         else if (inputX == LogicState::DISABLED && inputY == LogicState::ON)
         {
-            return LogicState::ON;
+            output = LogicState::ON;
+            return output;
         }
         else if (inputX == LogicState::OFF && inputY == LogicState::DISABLED)
         {
-            return LogicState::DISABLED;
+            output = LogicState::DISABLED;
+            return output;
         }
         else if (inputX == LogicState::DISABLED && inputY == LogicState::OFF)
         {
-            return LogicState::DISABLED;
+            output = LogicState::DISABLED;
+            return output;
         }
     }
     else
@@ -69,11 +73,13 @@ LogicState::eLogicState OrGate::answer() {
 
         if (inputX == LogicState::ON || inputY == LogicState::ON)
         {
-            return LogicState::ON;
+            output = LogicState::ON;
+            return output;
         }
         else if (inputX == LogicState::OFF && inputY == LogicState::OFF)
         {
-            return LogicState::OFF;
+            output = LogicState::OFF;
+            return output;
         }
     }
     std::cout << "An Error has occured, OrGate is defaulting to Disabled..." << std::endl;
