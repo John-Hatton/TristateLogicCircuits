@@ -38,6 +38,14 @@ void D_FlipFlop::setOutputQ(LogicState::eLogicState outputQ) {
     D_FlipFlop::outputQ = outputQ;
 }
 
+LogicState::eLogicState D_FlipFlop::getOutputQBar() const {
+    return outputQBar;
+}
+
+void D_FlipFlop::setOutputQBar(LogicState::eLogicState ouputQBar) {
+    D_FlipFlop::outputQBar = ouputQBar;
+}
+
 NotGate *D_FlipFlop::getNotGate() const {
     return notGate;
 }
@@ -99,6 +107,7 @@ LogicState::eLogicState D_FlipFlop::answer() {
     norGateTwo->setInputX(norGateOne->answer());
 
     outputQ = norGateOne->answer();
+    outputQBar = norGateTwo->answer();
 
     return outputQ;
 }
