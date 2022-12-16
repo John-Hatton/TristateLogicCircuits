@@ -66,7 +66,7 @@ TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_ON__enableInput_ON___OutputQ_ON__Te
     EXPECT_EQ(actual, expected);
 }
 
-TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_OFF__enableInput_ON_then_DISABLED___OutputQ_DISABLED__Test)
+TEST(D_FlipFlop_TESTS, D_FlipFlop__DataInput_OFF__enableInput_ON_then_DISABLED___OutputQ_OFF__Test)
 {
     // 1. Setup
 

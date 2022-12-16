@@ -9,8 +9,9 @@ add_library(TristateLogicCircuits
         Adders/FullAdder.cpp
         LogicGates/NorGate.cpp
         LogicGates/NotGate.cpp
-        ../include/LogicGates/NotGate.h
         Memory/D_FlipFlop.cpp
+        LogicGates/TriInputAndGate.cpp
+        Decoders/TwoToFourLineDecoder.cpp
         )
 
 
