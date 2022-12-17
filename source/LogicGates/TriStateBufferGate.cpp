@@ -25,19 +25,30 @@ void TriStateBufferGate::setEnableInput(LogicState::eLogicState enableInput) {
     TriStateBufferGate::enableInput = enableInput;
 }
 
+LogicState::eLogicState TriStateBufferGate::getOutput() const {
+    return output;
+}
+
+void TriStateBufferGate::setOutput(LogicState::eLogicState output) {
+    TriStateBufferGate::output = output;
+}
+
 LogicState::eLogicState TriStateBufferGate::answer() {
     if (enableInput == LogicState::ON)
     {
         // If the enable Input is ON, we want to set the output of the
         //  buffer to DISABLED!
-        return LogicState::DISABLED;
+        output = LogicState::DISABLED;
+        return output;
     }
     else if (enableInput == LogicState::OFF && dataInput == LogicState::ON)
     {
-        return LogicState::ON;
+        output = LogicState::ON;
+        return output;
     }
     else
     {
-        return LogicState::OFF;
+        output = LogicState::OFF;
+        return output;
     }
 }

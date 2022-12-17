@@ -12,6 +12,8 @@ add_library(TristateLogicCircuits
         Memory/D_FlipFlop.cpp
         LogicGates/TriInputAndGate.cpp
         Decoders/TwoToFourLineDecoder.cpp
+        Memory/FourBitFourWordRAM.cpp
+        LogicGates/QuadInputOrGate.cpp
         )
 
 
