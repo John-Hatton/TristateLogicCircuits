@@ -14,6 +14,8 @@ private:
 
     LogicState::eLogicState enableInput;
 
+    LogicState::eLogicState output;
+
 public:
 
     TriStateBufferGate();
@@ -25,6 +27,10 @@ public:
     LogicState::eLogicState getEnableInput() const;
 
     void setEnableInput(LogicState::eLogicState enableInput);
+
+    LogicState::eLogicState getOutput() const;
+
+    void setOutput(LogicState::eLogicState output);
 
     LogicState::eLogicState answer();
 
