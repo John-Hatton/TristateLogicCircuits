@@ -14,6 +14,11 @@ add_library(TristateLogicCircuits
         Decoders/TwoToFourLineDecoder.cpp
         Memory/FourBitFourWordRAM.cpp
         LogicGates/QuadInputOrGate.cpp
+        Decoders/FourToSixteenLineDecoder.cpp
+        Decoders/ThreeToEightLineDecoder.cpp
+
+
+        Decoders/FiveToThirtyTwoLineDecoder.cpp
         )
 
 
