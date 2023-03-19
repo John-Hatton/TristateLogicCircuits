@@ -22,7 +22,7 @@ TEST(FiveToThirtyTwoLineDecoder_TESTS, FiveToThirtyTwoLineDecoder___inputs_FFFFF
 
     myFiveToThirtyTwoLineDecoder->setWriteEnable(LogicState::ON);
 
-    
+
 
     std::vector<LogicState::eLogicState> expected = {LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
                                                      LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
@@ -32,6 +32,41 @@ TEST(FiveToThirtyTwoLineDecoder_TESTS, FiveToThirtyTwoLineDecoder___inputs_FFFFF
                                                      LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
                                                      LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
                                                      LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::ON};
+
+    auto actual = myFiveToThirtyTwoLineDecoder->currentState();
+
+    // 3. Test
+
+    EXPECT_EQ(actual, expected);
+
+}
+
+TEST(FiveToThirtyTwoLineDecoder_TESTS, FiveToThirtyTwoLineDecoder___inputs_TFFFF___Enable_ON__Output___F_F_F_F_F_F_F_F_F_F_F_F_F_F_F_F_T_F_F_F_F_F_F_F_F_F_F_F_F_F_F_F__Test)
+{
+    // 1. Setup
+
+    FiveToThirtyTwoLineDecoder* myFiveToThirtyTwoLineDecoder = new FiveToThirtyTwoLineDecoder();
+
+    // 2. Code
+
+    myFiveToThirtyTwoLineDecoder->setInput0(LogicState::OFF);
+    myFiveToThirtyTwoLineDecoder->setInput1(LogicState::OFF);
+    myFiveToThirtyTwoLineDecoder->setInput2(LogicState::OFF);
+    myFiveToThirtyTwoLineDecoder->setInput3(LogicState::OFF);
+    myFiveToThirtyTwoLineDecoder->setInput4(LogicState::ON);
+
+    myFiveToThirtyTwoLineDecoder->setWriteEnable(LogicState::ON);
+
+
+
+    std::vector<LogicState::eLogicState> expected = {LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::ON,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF,
+                                                     LogicState::OFF, LogicState::OFF, LogicState::OFF, LogicState::OFF};
 
     auto actual = myFiveToThirtyTwoLineDecoder->currentState();
 
