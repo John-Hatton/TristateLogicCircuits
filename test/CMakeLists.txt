@@ -18,6 +18,6 @@ add_executable(TristateLogicCircuits_Tests
         Memory/FourBitFourWordRAM_tests.cpp
         Decoders/FourToSixteenLineDecoder_tests.cpp
         Decoders/ThreeToEightLineDecoder_tests.cpp
-        Decoders/FiveToThirtyTwoLineDecoder_tests.cpp)
+        Decoders/FiveToThirtyTwoLineDecoder_tests.cpp Memory/SIPO_Register_tests.cpp)
 
 target_link_libraries(TristateLogicCircuits_Tests TristateLogicCircuits gtest gtest_main)

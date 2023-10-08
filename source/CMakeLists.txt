@@ -21,6 +21,6 @@ add_library(TristateLogicCircuits
         Decoders/FiveToThirtyTwoLineDecoder.cpp
         Memory/SIPO_Register.cpp
 
-        )
+        Memory/SIPO_Register.cpp)
 
 
