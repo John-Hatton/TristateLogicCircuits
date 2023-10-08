@@ -413,38 +413,46 @@ std::vector<LogicState::eLogicState> SIPO_Register::currentState()
 
     shiftRegister_DFL_QA->setDataInput(serialDataInput);
     shiftRegister_DFL_QA->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QA->answer();
 
     shiftRegister_DFL_QB->setDataInput(shiftRegister_DFL_QA->getOutputQ());
     shiftRegister_DFL_QB->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QB->answer();
 
     shiftRegister_DFL_QC->setDataInput(shiftRegister_DFL_QB->getOutputQ());
     shiftRegister_DFL_QC->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QC->answer();
 
     shiftRegister_DFL_QD->setDataInput(shiftRegister_DFL_QC->getOutputQ());
     shiftRegister_DFL_QD->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QD->answer();
 
     shiftRegister_DFL_QE->setDataInput(shiftRegister_DFL_QD->getOutputQ());
     shiftRegister_DFL_QE->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QE->answer();
 
     shiftRegister_DFL_QF->setDataInput(shiftRegister_DFL_QE->getOutputQ());
     shiftRegister_DFL_QF->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QF->answer();
 
     shiftRegister_DFL_QG->setDataInput(shiftRegister_DFL_QF->getOutputQ());
     shiftRegister_DFL_QG->setEnableInput(shiftRegisterClockInput);
+    shiftRegister_DFL_QG->answer();
 
     shiftRegister_DFL_QH->setDataInput(shiftRegister_DFL_QG->getOutputQ());
     shiftRegister_DFL_QH->setEnableInput(shiftRegisterClockInput);
-
-
-
-    shiftRegister_DFL_QA->answer();
-    shiftRegister_DFL_QB->answer();
-    shiftRegister_DFL_QC->answer();
-    shiftRegister_DFL_QD->answer();
-    shiftRegister_DFL_QE->answer();
-    shiftRegister_DFL_QF->answer();
-    shiftRegister_DFL_QG->answer();
     shiftRegister_DFL_QH->answer();
+
+
+
+
+
+
+
+
+
+
+
 
 
 
