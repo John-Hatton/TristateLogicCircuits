@@ -12,6 +12,8 @@ FullAdder::FullAdder() {
     andGateTwo = new AndGate();
     orGate = new OrGate();
 
+    carryIn = LogicState::OFF; // Default behavior of Carry In, unless populated elsewhere.
+
 }
 
 LogicState::eLogicState FullAdder::getInputX() const {
