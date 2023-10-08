@@ -7,6 +7,7 @@ add_library(TristateLogicCircuits
         LogicGates/OrGate.cpp
         LogicGates/XorGate.cpp
         Adders/FullAdder.cpp
+        Adders/FourBitAdder.cpp
         LogicGates/NorGate.cpp
         LogicGates/NotGate.cpp
         Memory/D_FlipFlop.cpp
@@ -20,6 +21,6 @@ add_library(TristateLogicCircuits
         Decoders/FiveToThirtyTwoLineDecoder.cpp
         Memory/SIPO_Register.cpp
 
-        )
+        Memory/SIPO_Register.cpp)
 
 

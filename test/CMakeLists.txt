@@ -8,6 +8,7 @@ add_executable(TristateLogicCircuits_Tests
         LogicGates/OrGate_tests.cpp
         LogicGates/XorGate_tests.cpp
         Adders/FullAdder_tests.cpp
+        Adders/FourBitAdder_tests.cpp
         LogicGates/NorGate_tests.cpp
         LogicGates/NotGate_tests.cpp
         Memory/D_FlipFlop_tests.cpp
@@ -17,7 +18,6 @@ add_executable(TristateLogicCircuits_Tests
         Memory/FourBitFourWordRAM_tests.cpp
         Decoders/FourToSixteenLineDecoder_tests.cpp
         Decoders/ThreeToEightLineDecoder_tests.cpp
-        Decoders/FiveToThirtyTwoLineDecoder_tests.cpp
-        Memory/SIPO_Register_tests.cpp)
+        Decoders/FiveToThirtyTwoLineDecoder_tests.cpp Memory/SIPO_Register_tests.cpp)
 
 target_link_libraries(TristateLogicCircuits_Tests TristateLogicCircuits gtest gtest_main)
